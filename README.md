@@ -12,14 +12,19 @@ O projeto foi implementado em Java, no arquivo `Comparacao.java`.
 
 ### Algoritmos Implementados
 
-| Categoria | Algoritmo | Detalhes da Implementação |
-| :---: | :--- | :--- |
-| **Estudo** | **Comb Sort** | Implementação com fator de encolhimento de $1.3$. |
-| **Estudo** | **Gnome Sort** | Implementação da "ordenadora de jardim" simples. |
-| **Estudo** | **Bucket Sort** | Implementado como um **Counting Sort** (adequado para o pequeno *range* de valores). |
-| **Comparação** | **Bubble Sort** | Utiliza *flag* de parada para otimizar o desempenho em vetores quase ordenados. |
-| **Comparação** | **Selection Sort** | Implementação clássica. |
-| **Comparação** | **Cocktail Sort** | Variação do Bubble Sort que percorre o vetor em duas direções. |
+## Algoritmos implementados
+1. Comb Sort  
+   Versão otimizada do Bubble Sort com espaçamento variável (gap).
+2. Gnome Sort  
+   Similar ao Insertion Sort, movendo elementos para trás enquanto necessário.
+3. Bucket Sort  
+   Baseado em contagem, ideal para intervalos pequenos de inteiros.
+4. Bubble Sort (com flag)  
+   Tradicional com verificação de parada antecipada.
+5. Selection Sort  
+   Seleciona o menor elemento e coloca na posição correta.
+6. Cocktail Sort  
+   Bubble Sort bidirecional (passa para frente e para trás).
 
 ### Vetores de Teste
 
