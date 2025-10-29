@@ -1,7 +1,7 @@
 # Comparação de Algoritmos de Ordenação em Java
 
-## Objetivo
-Implementar manualmente os algoritmos Comb Sort, Gnome Sort e Bucket Sort em Java, comparando seu desempenho com os algoritmos Bubble Sort (com flag de parada), Selection Sort e Cocktail Sort.
+## Sobre o projeto
+O objetivo é implementar manualmente os algoritmos Comb Sort, Gnome Sort e Bucket Sort em Java, comparando seu desempenho com os algoritmos Bubble Sort (com flag de parada), Selection Sort e Cocktail Sort.
 
 As métricas avaliadas foram:
 - Número de trocas entre elementos.
@@ -17,9 +17,9 @@ Regras do trabalho:
 ## Vetores utilizados
 
 ```java
-int[] vetor1 = {12, 18, 9, 25, 17, 31, 22, 27, 16, 13, 19, 23, 20, 30, 14, 11, 15, 24, 26, 28}; // Aleatório
-int[] vetor2 = {5, 7, 9, 10, 12, 14, 15, 17, 19, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32};   // Ordenado
-int[] vetor3 = {99, 85, 73, 60, 50, 40, 35, 30, 25, 20, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6};   // Invertido
+int[] vetor1 = {12, 18, 9, 25, 17, 31, 22, 27, 16, 13, 19, 23, 20, 30, 14, 11, 15, 24, 26, 28}; 
+int[] vetor2 = {5, 7, 9, 10, 12, 14, 15, 17, 19, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32};  
+int[] vetor3 = {99, 85, 73, 60, 50, 40, 35, 30, 25, 20, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6};  
 ```
 
 ---
@@ -103,4 +103,4 @@ Melhor: Bucket Sort — desempenho constante mesmo com vetor invertido.
 ---
 
 ## Autor
-Desenvolvido em Java puro, sem bibliotecas externas, conforme especificações do trabalho acadêmico.
+Victor Valerio Fadel
