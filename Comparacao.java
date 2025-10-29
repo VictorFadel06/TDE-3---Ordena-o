@@ -1,4 +1,4 @@
-public class ComparacaoSorts {
+public class Comparacao {
 
     static int trocas, iteracoes;
 
@@ -12,17 +12,17 @@ public class ComparacaoSorts {
     public static void combSort(int[] v, int n) {
         trocas = 0;
         iteracoes = 0;
-        int gap = n;
+        int lacuna = n;
         boolean trocado = true;
-        while (gap > 1 || trocado) {
+        while (lacuna > 1 || trocado) {
             iteracoes++;
-            gap = (gap * 10) / 13;
-            if (gap < 1) gap = 1;
+            lacuna = (lacuna * 10) / 13;
+            if (lacuna < 1) lacuna = 1;
             trocado = false;
             int i = 0;
-            while (i + gap < n) {
-                if (v[i] > v[i + gap]) {
-                    troca(v, i, i + gap);
+            while (i + lacuna < n) {
+                if (v[i] > v[i + lacuna]) {
+                    troca(v, i, i + lacuna);
                     trocado = true;
                 }
                 i++;
@@ -144,18 +144,30 @@ public class ComparacaoSorts {
         String[] nomes = {"Comb Sort", "Gnome Sort", "Bucket Sort", "Bubble Sort", "Selection Sort", "Cocktail Sort"};
 
         for (int k = 0; k < 3; k++) {
-            System.out.println("\n===== VETOR " + (k + 1) + " =====");
+            System.out.println("\n VETOR " + (k + 1));
             for (int a = 0; a < 6; a++) {
                 int[] v = new int[20];
                 for (int i = 0; i < 20; i++) v[i] = vetores[k][i];
 
                 switch (a) {
-                    case 0: combSort(v, 20); break;
-                    case 1: gnomeSort(v, 20); break;
-                    case 2: bucketSort(v, 20); break;
-                    case 3: bubbleSortFlag(v, 20); break;
-                    case 4: selectionSort(v, 20); break;
-                    case 5: cocktailSort(v, 20); break;
+                    case 0: 
+                        combSort(v, 20); 
+                        break;
+                    case 1: 
+                        gnomeSort(v, 20); 
+                        break;
+                    case 2: 
+                        bucketSort(v, 20); 
+                        break;
+                    case 3: 
+                        bubbleSortFlag(v, 20); 
+                        break;
+                    case 4: 
+                        selectionSort(v, 20); 
+                        break;
+                    case 5: 
+                        cocktailSort(v, 20); 
+                        break;
                 }
                 System.out.println(nomes[a] + " -> Trocas: " + trocas + " | Iterações: " + iteracoes);
             }

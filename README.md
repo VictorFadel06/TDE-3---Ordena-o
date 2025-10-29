@@ -1,106 +1,94 @@
-# Comparação de Algoritmos de Ordenação em Java
+# Comparação de Algoritmos de Ordenação
 
-## Sobre o projeto
-O objetivo é implementar manualmente os algoritmos Comb Sort, Gnome Sort e Bucket Sort em Java, comparando seu desempenho com os algoritmos Bubble Sort (com flag de parada), Selection Sort e Cocktail Sort.
+## Descrição do Projeto
 
-As métricas avaliadas foram:
-- Número de trocas entre elementos.
-- Número de iterações (passagens de laço).
+Este projeto consiste na implementação e comparação de seis algoritmos de ordenação (três solicitados para estudo e implementação, e três para comparação de desempenho) em Java. O objetivo principal é analisar a eficiência de cada algoritmo em diferentes cenários (vetor aleatório, ordenado e inversamente ordenado), medindo o **número de trocas** de elementos e o **número de iterações** (laços rodados) como métricas de desempenho.
 
-Regras do trabalho:
-- Proibido o uso de funções prontas, listas, arrays utilitários ou estruturas genéricas (ArrayList, Collections, etc.).
-- Permitido apenas: int, float, String e funções básicas de entrada/saída.
-- O uso de length é permitido apenas em String.
+O código-fonte (`Comparacao.java`) contém a implementação dos algoritmos.
 
----
+## Implementação e Requisitos
 
-## Vetores utilizados
+O projeto foi implementado em Java, no arquivo `Comparacao.java`.
 
-```java
-int[] vetor1 = {12, 18, 9, 25, 17, 31, 22, 27, 16, 13, 19, 23, 20, 30, 14, 11, 15, 24, 26, 28}; 
-int[] vetor2 = {5, 7, 9, 10, 12, 14, 15, 17, 19, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32};  
-int[] vetor3 = {99, 85, 73, 60, 50, 40, 35, 30, 25, 20, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6};  
-```
+### Algoritmos Implementados
 
----
+| Categoria | Algoritmo | Detalhes da Implementação |
+| :---: | :--- | :--- |
+| **Estudo** | **Comb Sort** | Implementação com fator de encolhimento de $1.3$. |
+| **Estudo** | **Gnome Sort** | Implementação da "ordenadora de jardim" simples. |
+| **Estudo** | **Bucket Sort** | Implementado como um **Counting Sort** (adequado para o pequeno *range* de valores). |
+| **Comparação** | **Bubble Sort** | Utiliza *flag* de parada para otimizar o desempenho em vetores quase ordenados. |
+| **Comparação** | **Selection Sort** | Implementação clássica. |
+| **Comparação** | **Cocktail Sort** | Variação do Bubble Sort que percorre o vetor em duas direções. |
 
-## Algoritmos implementados
-1. Comb Sort  
-   Versão otimizada do Bubble Sort com espaçamento variável (gap).
-2. Gnome Sort  
-   Similar ao Insertion Sort, movendo elementos para trás enquanto necessário.
-3. Bucket Sort  
-   Baseado em contagem, ideal para intervalos pequenos de inteiros.
-4. Bubble Sort (com flag)  
-   Tradicional com verificação de parada antecipada.
-5. Selection Sort  
-   Seleciona o menor elemento e coloca na posição correta.
-6. Cocktail Sort  
-   Bubble Sort bidirecional (passa para frente e para trás).
+### Vetores de Teste
 
----
+| Vetor | Tipo de Ordenação | Conteúdo |
+| :---: | :---: | :--- |
+| **Vetor 1** | **Aleatório** | $\{12, 18, 9, 25, 17, 31, 22, 27, 16, 13, 19, 23, 20, 30, 14, 11, 15, 24, 26, 28\}$ |
+| **Vetor 2** | **Ordenado** | $\{5, 7, 9, 10, 12, 14, 15, 17, 19, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32\}$ |
+| **Vetor 3** | **Inversamente Ordenado** | $\{99, 85, 73, 60, 50, 40, 35, 30, 25, 20, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6\}$ |
 
-## Resultados de desempenho
+## 🏆 Resultados da Comparação
 
-### Vetor 1 – Aleatório
+Os resultados a seguir foram obtidos a partir da execução do código, medindo as trocas e iterações.
+
+### Tabela de Desempenho (Métricas)
+
+#### **Vetor 1 – Aleatório (Pior Caso Comum)**
 | Algoritmo | Trocas | Iterações |
-|------------|---------|------------|
-| Comb Sort | 45 | 130 |
-| Gnome Sort | 70 | 250 |
-| Bucket Sort | 20 | 60 |
-| Bubble Sort (flag) | 110 | 380 |
-| Selection Sort | 19 | 190 |
-| Cocktail Sort | 80 | 300 |
+| :--- | :---: | :---: |
+| Comb Sort | 22 | 9 |
+| Gnome Sort | 78 | 175 |
+| **Bucket Sort** | **20** | **39** |
+| Bubble Sort (flag) | 78 | 285 |
+| **Selection Sort** | **18** | 190 |
+| Cocktail Sort | 78 | 154 |
 
-Melhor: Comb Sort (equilíbrio entre trocas e iterações)
-
----
-
-### Vetor 2 – Ordenado
+#### **Vetor 2 – Ordenado (Melhor Caso)**
 | Algoritmo | Trocas | Iterações |
-|------------|---------|------------|
-| Comb Sort | 0 | 1 |
-| Gnome Sort | 0 | 1 |
-| Bucket Sort | 20 | 60 |
-| Bubble Sort (flag) | 0 | 1 |
-| Selection Sort | 0 | 190 |
-| Cocktail Sort | 0 | 1 |
+| :--- | :---: | :---: |
+| **Comb Sort** | **0** | 8 |
+| **Gnome Sort** | **0** | **19** |
+| Bucket Sort | 20 | 39 |
+| **Bubble Sort (flag)** | **0** | **19** |
+| **Selection Sort** | **0** | 190 |
+| **Cocktail Sort** | **0** | **19** |
 
-Melhor: Bubble Sort (flag) — detecta ordenação e termina imediatamente.
-
----
-
-### Vetor 3 – Invertido
+#### **Vetor 3 – Invertido (Pior Caso)**
 | Algoritmo | Trocas | Iterações |
-|------------|---------|------------|
-| Comb Sort | 60 | 200 |
-| Gnome Sort | 190 | 400 |
-| Bucket Sort | 20 | 60 |
-| Bubble Sort (flag) | 190 | 400 |
-| Selection Sort | 19 | 190 |
-| Cocktail Sort | 150 | 380 |
-
-Melhor: Bucket Sort — desempenho constante mesmo com vetor invertido.
+| :--- | :---: | :---: |
+| Comb Sort | 18 | **9** |
+| Gnome Sort | 190 | 399 |
+| Bucket Sort | 20 | 39 |
+| Bubble Sort (flag) | 190 | 380 |
+| **Selection Sort** | **10** | 190 |
+| Cocktail Sort | 190 | 190 |
 
 ---
 
-## Ranking Geral
+### Análise de Desempenho
 
-| Critério | 1º | 2º | 3º | 4º | 5º | 6º |
-|-----------|----|----|----|----|----|----|
-| Menos Trocas | Bucket | Selection | Comb | Cocktail | Gnome | Bubble |
-| Menos Iterações | Bucket | Bubble (flag) | Comb | Selection | Cocktail | Gnome |
+#### **1. Ranqueamento por Menos Trocas de Elementos (Eficiência de Movimentação)**
 
----
+| Ranque | Vetor 1 (Aleatório) | Vetor 2 (Ordenado) | Vetor 3 (Invertido) |
+| :---: | :--- | :--- | :--- |
+| **1º** | **Selection Sort (18)** | **Empate (0)** | **Selection Sort (10)** |
+| 2º | Bucket Sort (20) | Bucket Sort (20) | Comb Sort (18) |
+| 3º | Comb Sort (22) | - | Bucket Sort (20) |
 
-## Conclusão
-- O Bucket Sort teve o melhor desempenho geral em quantidade de trocas e iterações.  
-- O Comb Sort apresentou excelente desempenho no vetor aleatório.  
-- O Bubble Sort (com flag) é imbatível quando o vetor já está ordenado.  
-- Selection Sort e Cocktail Sort possuem desempenho intermediário.  
-- Gnome Sort foi o mais lento e com mais trocas.
+**Conclusão (Trocas):** O **Selection Sort** é o mais eficiente em termos de trocas para vetores desordenados e inversamente ordenados, pois minimiza a movimentação de dados.
 
----
+#### **2. Ranqueamento por Menos Iterações (Eficiência de Tempo)**
+
+| Ranque | Vetor 1 (Aleatório) | Vetor 2 (Ordenado) | Vetor 3 (Invertido) |
+| :---: | :--- | :--- | :--- |
+| **1º** | **Comb Sort (9)** | **Comb Sort (8)** | **Comb Sort (9)** |
+| 2º | Bucket Sort (39) | Empate (19) | Bucket Sort (39) |
+| 3º | Cocktail Sort (154) | - | Cocktail Sort (190) / Selection Sort (190) |
+
+**Conclusão (Iterações):** O **Comb Sort** apresentou a menor quantidade de iterações em todos os cenários, indicando uma superioridade em complexidade de tempo efetiva em comparação com o Bubble Sort e suas variações. O **Bucket Sort** também se destacou com um número baixo e constante.
+
 
 ## Autor
 Victor Valerio Fadel
